@@ -1,0 +1,41 @@
+import java.util.*;
+public class Main
+{
+   public static int prime(int n){
+       int c=0;
+       for(int i=2;i<n;i++){
+           if(n%i==0){
+               c++;
+            
+           }
+       }
+   return c;
+}
+public static int rev(int rev){
+    int res=0;
+    while(rev>0){
+        int r=rev%10;
+        res=res*10+r;
+        rev/=10;
+    }
+    return res;
+}
+public static void main(String[] args){
+    Scanner sc=new Scanner (System.in);
+    int n=sc.nextInt();
+    int c=prime(n);
+    if(c==0){
+        int e=rev(n);
+        int c2=prime(e);
+        if(c2==0){
+            System.out.println("Twisted Prime");
+        }
+        else{
+            System.out.println("Not a Twisted Prime");
+        }
+        }
+        else{
+            System.out.println("Not a Prime");
+        }
+    }
+}
